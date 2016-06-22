@@ -8,9 +8,9 @@ const int convertToArabic(const char* character) {
 	if ("III" == character) {
 		return 3;
 	}
-	
-	if ("II" == character) {
-		return 2;
+
+	if ("V" == character) {
+		return 5;
 	}
 
 	return 1;

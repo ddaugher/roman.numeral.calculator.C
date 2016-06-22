@@ -10,9 +10,9 @@ START_TEST(test_convert_I_to_1)
    }
 END_TEST
 
-START_TEST(test_convert_II_to_2)
+START_TEST(test_convert_V_to_5)
    {
-    ck_assert_int_eq(2, convertToArabic("II"));
+    ck_assert_int_eq(5, convertToArabic("V"));
    }
 END_TEST
 
@@ -27,7 +27,7 @@ Suite* testSuite(void)
    Suite* suite = suite_create("Converter Tests");
    TCase* romanToArabicTestCase = tcase_create("Convert Roman to Arabic");
    tcase_add_test(romanToArabicTestCase, test_convert_I_to_1);
-   tcase_add_test(romanToArabicTestCase, test_convert_II_to_2);
+   tcase_add_test(romanToArabicTestCase, test_convert_V_to_5);
    tcase_add_test(romanToArabicTestCase, test_convert_III_to_3);
    suite_add_tcase(suite, romanToArabicTestCase);
 
