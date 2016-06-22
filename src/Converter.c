@@ -5,6 +5,10 @@
 
 const int convertToArabic(const char* character) {
 
+	if ("C" == character) {
+		return 100;
+	}
+
 	if ("L" == character) {
 		return 50;
 	}
