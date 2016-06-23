@@ -5,6 +5,18 @@
 
 const int convertToArabic(const char* character) {
 
+	int value = 0;
+
+	for(int i = 0; i < strlen(character); ++i) {
+		value += romanToInt(character);
+	}
+
+	return value;
+
+}
+
+int romanToInt(const char* character) {
+
 	if (strcmp("M", character) == 0) {
 		return 1000;
 	}
