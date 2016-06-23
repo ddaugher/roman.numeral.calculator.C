@@ -5,30 +5,31 @@
 
 const int convertToArabic(const char* character) {
 
-	if ("M" == character) {
+	if (strcmp("M", character) == 0) {
 		return 1000;
 	}
 
-	if ("D" == character) {
+	if (strcmp("D", character) == 0) {
 		return 500;
 	}
 
-	if ("C" == character) {
+	if (strcmp("C", character) == 0) {
 		return 100;
 	}
 
-	if ("L" == character) {
+	if (strcmp("L", character) == 0) {
 		return 50;
 	}
 
-	if ("X" == character) {
+	if (strcmp("X", character) == 0) {
 		return 10;
 	}
 
-	if ("V" == character) {
+	if (strcmp("V", character) == 0) {
 		return 5;
 	}
 
 	return 1;
+
 }
 
