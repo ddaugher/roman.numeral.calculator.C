@@ -6,7 +6,7 @@
 
 int romanToInt(const char* character) {
 
-	if (strcmp("M", character) == 0) {
+	if (strncasecmp("M", character, 1) == 0) {
 		return 1000;
 	}
 
