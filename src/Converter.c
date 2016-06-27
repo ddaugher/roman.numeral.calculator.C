@@ -1,19 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <ctype.h>
 #include "Converter.h"
-
-const int convertToArabic(const char* character) {
-
-	int value = 0;
-
-	for(int i = 0; i < strlen(character); ++i) {
-		value += romanToInt(character);
-	}
-
-	return value;
-
-}
 
 int romanToInt(const char* character) {
 
@@ -33,15 +22,27 @@ int romanToInt(const char* character) {
 		return 50;
 	}
 
-	if (strcmp("X", character) == 0) {
+	if (strncasecmp("X", character, 1) == 0) {
 		return 10;
 	}
 
-	if (strcmp("V", character) == 0) {
+	if (strncasecmp("V", character, 1) == 0) {
 		return 5;
 	}
 
 	return 1;
+
+}
+
+const int convertToArabic(const char* character) {
+
+	int value = 0;
+
+	for(int i = 0; i < strlen(character); ++i) {
+		value += romanToInt(character);
+	}
+
+	return value;
 
 }
 
