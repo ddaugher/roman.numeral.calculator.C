@@ -10,7 +10,7 @@ int romanToInt(const char* character) {
 		return 1000;
 	}
 
-	if (strcmp("D", character) == 0) {
+	if (strncasecmp("D", character, 1) == 0) {
 		return 500;
 	}
 
