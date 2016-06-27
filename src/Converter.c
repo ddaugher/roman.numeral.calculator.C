@@ -18,7 +18,7 @@ int romanToInt(const char* character) {
 		return 100;
 	}
 
-	if (strcmp("L", character) == 0) {
+	if (strncasecmp("L", character, 1) == 0) {
 		return 50;
 	}
 

@@ -70,6 +70,12 @@ START_TEST(test_convert_lowercase_x_to_10)
    }
 END_TEST
 
+START_TEST(test_convert_lowercase_l_to_50)
+   {
+    ck_assert_int_eq(50, convertToArabic("l"));
+   }
+END_TEST
+
 Suite* testSuite(void)
 {
    Suite* suite = suite_create("Converter Tests");
@@ -85,6 +91,7 @@ Suite* testSuite(void)
    tcase_add_test(romanToArabicTestCase, test_convert_III_to_3);
    tcase_add_test(romanToArabicTestCase, test_convert_lowercase_v_to_5);
    tcase_add_test(romanToArabicTestCase, test_convert_lowercase_x_to_10);
+   tcase_add_test(romanToArabicTestCase, test_convert_lowercase_l_to_50);
    suite_add_tcase(suite, romanToArabicTestCase);
 
    return suite;
