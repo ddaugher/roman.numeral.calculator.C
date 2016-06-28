@@ -43,6 +43,10 @@ static bool doesContainXXXX(const char* character) {
   return strstr(character, "XXXX") != NULL;
 }
 
+static bool doesContainCCCC(const char* character) {
+  return strstr(character, "CCCC") != NULL;
+}
+
 bool isValid(const char* character) {
 	int length = strlen(character);
 	if (1 == length) {
@@ -58,6 +62,10 @@ bool isValid(const char* character) {
   }
 
   if(doesContainXXXX(character)) {
+    return false;
+  }
+
+  if(doesContainCCCC(character)) {
     return false;
   }
 
