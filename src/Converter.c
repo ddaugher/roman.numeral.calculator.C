@@ -133,5 +133,8 @@ const int convertToArabic(const char* numerals) {
 }
 
 const int convertToRoman(char* buf, int n) {
+
+    if (n <= 0) return EXIT_FAILURE;
+
     return EXIT_SUCCESS;
 }
