@@ -39,6 +39,9 @@ static bool doesContainIIII(const char* character) {
   return strstr(character, "IIII") != NULL;
 }
 
+static bool doesContainXXXX(const char* character) {
+  return strstr(character, "XXXX") != NULL;
+}
 
 bool isValid(const char* character) {
 	int length = strlen(character);
@@ -51,6 +54,10 @@ bool isValid(const char* character) {
 	}
 
   if(doesContainIIII(character)) {
+    return false;
+  }
+
+  if(doesContainXXXX(character)) {
     return false;
   }
 
