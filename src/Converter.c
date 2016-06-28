@@ -35,6 +35,11 @@ int romanToInt(const char character) {
 
 }
 
+bool doesContainIIII(const char* character) {
+  return strstr(character, "IIII") != NULL;
+}
+
+
 bool isValid(const char* character) {
 	int length = strlen(character);
 	if (1 == length) {
@@ -45,7 +50,7 @@ bool isValid(const char* character) {
 		return true;
 	}
 
-  if(strstr(character, "IIII") != NULL) {
+  if(doesContainIIII(character)) {
     return false;
   }
 
