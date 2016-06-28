@@ -96,34 +96,36 @@ static bool isValid(const char* numerals) {
 
 const int convertToArabic(const char* numerals) {
 
-	int value = 0;
+	int total = 0;
 
 	if (!isValid(numerals)) {
 		return 0;
 	}
 
-	if (1 == strlen(numerals)) {
+	int length = strlen(numerals);
+
+	if (1 == length) {
 		return romanToInt((char)numerals[0]);
 	}
 
-	for(int i = 0; i < strlen(numerals); ++i) {
+	for(int i = 0; i < length; ++i) {
 		int current = romanToInt((char)numerals[i]);
 
-		if (strlen(numerals)-1 == i) {
-			value += current;
+		if (length-1 == i) {
+			total += current;
 			break;
 		}
 
 		int next = romanToInt((char)numerals[i+1]);
 
 		if (current < next) {
-			value -= current;
+			total -= current;
 		} else {
-			value += current;
+			total += current;
 		}
 	}
 
-	return value;
+	return total;
 
 }
 
