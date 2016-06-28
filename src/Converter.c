@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <stdbool.h>
 #include "Converter.h"
 
 int romanToInt(const char character) {
@@ -34,9 +35,39 @@ int romanToInt(const char character) {
 
 }
 
+bool isValid(const char* character) {
+	int length = strlen(character);
+	if (1 == length) {
+		return true;
+	}
+
+	if (2 == length) {
+		return true;
+	}
+
+	int count = 0;
+	int val = 0;
+	for(int i = length-1; i>= 0; i--) {
+		int current = romanToInt((char)character[i]);
+		if (val < current) {
+			val = current;
+		} else if (current < val) {
+			count++;
+		}
+
+		if (count >= 2) return false;
+	}
+
+	return true;
+}
+
 const int convertToArabic(const char* character) {
 
 	int value = 0;
+
+	if (!isValid(character)) {
+		return 0;
+	}
 
 	if (1 == strlen(character)) {
 		return romanToInt((char)character[0]);
