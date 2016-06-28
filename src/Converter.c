@@ -78,8 +78,6 @@ static bool isValid(const char* numerals) {
 
     if (containsInvalidCombinations(numerals)) return false;
 
-	printf("check !!!%s\n", numerals);
-
 	int count = 0;
 	int val = 0;
 	for(int i = length-1; i>= 0; i--) {
@@ -102,7 +100,6 @@ const int convertToArabic(const char* numerals) {
 	int total = 0;
 
 	if (!isValid(numerals)) {
-	    printf("invalid !!!%s\n", numerals);
 		return 0;
 	}
 
