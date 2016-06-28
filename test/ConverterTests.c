@@ -154,6 +154,12 @@ START_TEST(test_convert_IIII_to_invalid)
    }
 END_TEST
 
+START_TEST(test_convert_any_numeral_containing_IIII_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("XIIIIC"));
+   }
+END_TEST
+
 Suite* testSuite(void)
 {
    Suite* suite = suite_create("Converter Tests");
@@ -183,6 +189,7 @@ Suite* testSuite(void)
    tcase_add_test(romanToArabicTestCase, test_convert_IXC_to_invalid);
    tcase_add_test(romanToArabicTestCase, test_convert_IIVVMM_to_invalid);
    tcase_add_test(romanToArabicTestCase, test_convert_IIII_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_any_numeral_containing_IIII_to_invalid);
    suite_add_tcase(suite, romanToArabicTestCase);
 
    return suite;
