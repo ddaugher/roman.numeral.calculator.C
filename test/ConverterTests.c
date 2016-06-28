@@ -130,6 +130,96 @@ START_TEST(test_convert_CMIII_to_903)
    }
 END_TEST
 
+START_TEST(test_convert_IIX_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("IIX"));
+   }
+END_TEST
+
+START_TEST(test_convert_IXC_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("IXC"));
+   }
+END_TEST
+
+START_TEST(test_convert_IIVVMM_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("IIVVMM"));
+   }
+END_TEST
+
+START_TEST(test_convert_IIII_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("IIII"));
+   }
+END_TEST
+
+START_TEST(test_convert_any_numeral_containing_IIII_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("XIIIIC"));
+   }
+END_TEST
+
+START_TEST(test_convert_XXXX_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("XXXX"));
+   }
+END_TEST
+
+START_TEST(test_convert_any_numeral_containing_XXXX_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("IIXXXXII"));
+   }
+END_TEST
+
+START_TEST(test_convert_CCCC_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("CCCC"));
+   }
+END_TEST
+
+START_TEST(test_convert_any_numeral_containing_CCCC_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("IICCCCII"));
+   }
+END_TEST
+
+START_TEST(test_convert_VV_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("VV"));
+   }
+END_TEST
+
+START_TEST(test_convert_any_numeral_containing_VV_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("IIVVII"));
+   }
+END_TEST
+
+START_TEST(test_convert_LL_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("LL"));
+   }
+END_TEST
+
+START_TEST(test_convert_any_numeral_containing_LL_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("IILLII"));
+   }
+END_TEST
+
+START_TEST(test_convert_DD_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("DD"));
+   }
+END_TEST
+
+START_TEST(test_convert_any_numeral_containing_DD_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("IIDDII"));
+   }
+END_TEST
+
 Suite* testSuite(void)
 {
    Suite* suite = suite_create("Converter Tests");
@@ -155,6 +245,21 @@ Suite* testSuite(void)
    tcase_add_test(romanToArabicTestCase, test_convert_LD_to_450);
    tcase_add_test(romanToArabicTestCase, test_convert_VI_to_6);
    tcase_add_test(romanToArabicTestCase, test_convert_CMIII_to_903);
+   tcase_add_test(romanToArabicTestCase, test_convert_IIX_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_IXC_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_IIVVMM_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_IIII_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_any_numeral_containing_IIII_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_XXXX_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_any_numeral_containing_XXXX_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_CCCC_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_any_numeral_containing_CCCC_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_VV_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_any_numeral_containing_VV_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_LL_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_any_numeral_containing_LL_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_DD_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_any_numeral_containing_DD_to_invalid);
    suite_add_tcase(suite, romanToArabicTestCase);
 
    return suite;
