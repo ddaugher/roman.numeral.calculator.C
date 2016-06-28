@@ -47,11 +47,19 @@ static bool doesContainCCCC(const char* character) {
   return strstr(character, "CCCC") != NULL;
 }
 
+static bool doesContainVV(const char* character) {
+  return strstr(character, "VV") != NULL;
+}
+
 bool isValid(const char* character) {
 	int length = strlen(character);
 	if (1 == length) {
 		return true;
 	}
+
+  if(doesContainVV(character)) {
+    return false;
+  }
 
 	if (2 == length) {
 		return true;

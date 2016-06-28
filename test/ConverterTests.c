@@ -184,6 +184,18 @@ START_TEST(test_convert_any_numeral_containing_CCCC_to_invalid)
    }
 END_TEST
 
+START_TEST(test_convert_VV_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("VV"));
+   }
+END_TEST
+
+START_TEST(test_convert_any_numeral_containing_VV_to_invalid)
+   {
+    ck_assert_int_eq(0, convertToArabic("IIVVII"));
+   }
+END_TEST
+
 Suite* testSuite(void)
 {
    Suite* suite = suite_create("Converter Tests");
@@ -218,6 +230,8 @@ Suite* testSuite(void)
    tcase_add_test(romanToArabicTestCase, test_convert_any_numeral_containing_XXXX_to_invalid);
    tcase_add_test(romanToArabicTestCase, test_convert_CCCC_to_invalid);
    tcase_add_test(romanToArabicTestCase, test_convert_any_numeral_containing_CCCC_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_VV_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_any_numeral_containing_VV_to_invalid);
    suite_add_tcase(suite, romanToArabicTestCase);
 
    return suite;
