@@ -231,7 +231,7 @@ START_TEST(test_convert_to_proper_arabic_value)
    }
 END_TEST
 
-Suite* testSuite(void)
+Suite* converterTestsSuite(void)
 {
    Suite* suite = suite_create("Converter Tests");
    TCase* romanToArabicTestCase = tcase_create("Convert Roman to Arabic");

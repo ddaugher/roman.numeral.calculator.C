@@ -71,6 +71,8 @@ static bool containsInvalidCombinations(const char* numerals) {
   if(doesContainXXXX(numerals)) { return true; }
 
   if(doesContainCCCC(numerals)) { return true; }
+
+  return false;
 }
 
 static bool isValid(const char* numerals) {
