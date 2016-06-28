@@ -55,6 +55,10 @@ static bool doesContainLL(const char* character) {
   return strstr(character, "LL") != NULL;
 }
 
+static bool doesContainDD(const char* character) {
+  return strstr(character, "DD") != NULL;
+}
+
 bool isValid(const char* character) {
 	int length = strlen(character);
 	if (1 == length) {
@@ -66,6 +70,10 @@ bool isValid(const char* character) {
   }
 
   if(doesContainLL(character)) {
+    return false;
+  }
+
+  if(doesContainDD(character)) {
     return false;
   }
 
