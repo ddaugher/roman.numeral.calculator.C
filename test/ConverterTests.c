@@ -220,6 +220,15 @@ START_TEST(test_convert_any_numeral_containing_DD_to_invalid)
    }
 END_TEST
 
+START_TEST(test_convert_to_proper_arabic_value)
+   {
+    ck_assert_int_eq(328, convertToArabic("CCCXXVIII"));
+    ck_assert_int_eq(658, convertToArabic("DCLVIII"));
+    ck_assert_int_eq(784, convertToArabic("DCCLXXXIV"));
+    ck_assert_int_eq(786, convertToArabic("DCCLXXXVI"));
+   }
+END_TEST
+
 Suite* testSuite(void)
 {
    Suite* suite = suite_create("Converter Tests");
@@ -260,6 +269,7 @@ Suite* testSuite(void)
    tcase_add_test(romanToArabicTestCase, test_convert_any_numeral_containing_LL_to_invalid);
    tcase_add_test(romanToArabicTestCase, test_convert_DD_to_invalid);
    tcase_add_test(romanToArabicTestCase, test_convert_any_numeral_containing_DD_to_invalid);
+   tcase_add_test(romanToArabicTestCase, test_convert_to_proper_arabic_value);
    suite_add_tcase(suite, romanToArabicTestCase);
 
    return suite;

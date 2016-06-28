@@ -114,13 +114,12 @@ const int convertToArabic(const char* numerals) {
 			break;
 		}
 
-		int next = romanToInt((char)numerals[++i]);
-
+		int next = romanToInt((char)numerals[i+1]);
 
 		if (current < next) {
-			value += next - current;
+			value -= current;
 		} else {
-			value += current + next;
+			value += current;
 		}
 	}
 
