@@ -38,9 +38,26 @@ const int convertToArabic(const char* character) {
 
 	int value = 0;
 
+	if (1 == strlen(character)) {
+		return romanToInt((char)character[0]);
+	}
+
 	for(int i = 0; i < strlen(character); ++i) {
-		value += romanToInt((char)character[i]);
-		printf("Value: %c\n", (char)character[i]);
+		int current = romanToInt((char)character[i]);
+
+		if (strlen(character)-1 == i) {
+			value += current;
+			break;
+		}
+
+		int next = romanToInt((char)character[++i]);
+
+
+		if (current < next) {
+			value += next - current;
+		} else {
+			value += current + next;
+		}
 	}
 
 	return value;
