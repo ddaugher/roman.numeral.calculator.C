@@ -45,6 +45,10 @@ bool isValid(const char* character) {
 		return true;
 	}
 
+  if(strstr(character, "IIII") != NULL) {
+    return false;
+  }
+
 	int count = 0;
 	int val = 0;
 	for(int i = length-1; i>= 0; i--) {
