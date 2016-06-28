@@ -2,5 +2,5 @@
 #define CONVERTER_TESTS_H
 #include <check.h>
 
-Suite* testSuite(void);
+Suite* converterTestsSuite(void);
 #endif

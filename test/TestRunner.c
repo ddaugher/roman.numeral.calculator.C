@@ -4,7 +4,7 @@
 
 int main(){
     int numberOfFailedTests;
-    Suite* converterSuite = testSuite();
+    Suite* converterSuite = converterTestsSuite();
     SRunner *suiteRunner = srunner_create(converterSuite);
     srunner_run_all(suiteRunner, CK_VERBOSE);
     numberOfFailedTests = srunner_ntests_failed(suiteRunner);
