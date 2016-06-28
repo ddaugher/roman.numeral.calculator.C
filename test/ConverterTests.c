@@ -118,6 +118,12 @@ START_TEST(test_convert_LD_to_450)
    }
 END_TEST
 
+START_TEST(test_convert_VI_to_6)
+   {
+    ck_assert_int_eq(6, convertToArabic("VI"));
+   }
+END_TEST
+
 Suite* testSuite(void)
 {
    Suite* suite = suite_create("Converter Tests");
@@ -141,6 +147,7 @@ Suite* testSuite(void)
    tcase_add_test(romanToArabicTestCase, test_convert_IX_to_9);
    tcase_add_test(romanToArabicTestCase, test_convert_XL_to_40);
    tcase_add_test(romanToArabicTestCase, test_convert_LD_to_450);
+   tcase_add_test(romanToArabicTestCase, test_convert_VI_to_6);
    suite_add_tcase(suite, romanToArabicTestCase);
 
    return suite;
