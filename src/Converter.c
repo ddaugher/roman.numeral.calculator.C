@@ -35,7 +35,7 @@ int romanToInt(const char character) {
 
 }
 
-bool doesContainIIII(const char* character) {
+static bool doesContainIIII(const char* character) {
   return strstr(character, "IIII") != NULL;
 }
 
