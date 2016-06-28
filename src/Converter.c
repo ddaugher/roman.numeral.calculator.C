@@ -5,29 +5,29 @@
 #include <stdbool.h>
 #include "Converter.h"
 
-int romanToInt(const char character) {
+int romanToInt(const char numberal) {
 
-    if ('M' == toupper(character)) {
+    if ('M' == toupper(numberal)) {
 		return 1000;
 	}
 
-    if ('D' == toupper(character)) {
+    if ('D' == toupper(numberal)) {
 		return 500;
 	}
 
-    if ('C' == toupper(character)) {
+    if ('C' == toupper(numberal)) {
 		return 100;
 	}
 
-    if ('L' == toupper(character)) {
+    if ('L' == toupper(numberal)) {
 		return 50;
 	}
 
-    if ('X' == toupper(character)) {
+    if ('X' == toupper(numberal)) {
 		return 10;
 	}
 
-    if ('V' == toupper(character)) {
+    if ('V' == toupper(numberal)) {
 		return 5;
 	}
 
@@ -35,68 +35,53 @@ int romanToInt(const char character) {
 
 }
 
-static bool doesContainIIII(const char* character) {
-  return strstr(character, "IIII") != NULL;
+static bool doesContainIIII(const char* numerals) {
+  return strstr(numerals, "IIII") != NULL;
 }
 
-static bool doesContainXXXX(const char* character) {
-  return strstr(character, "XXXX") != NULL;
+static bool doesContainXXXX(const char* numerals) {
+  return strstr(numerals, "XXXX") != NULL;
 }
 
-static bool doesContainCCCC(const char* character) {
-  return strstr(character, "CCCC") != NULL;
+static bool doesContainCCCC(const char* numerals) {
+  return strstr(numerals, "CCCC") != NULL;
 }
 
-static bool doesContainVV(const char* character) {
-  return strstr(character, "VV") != NULL;
+static bool containsInvalidVV(const char* numerals) {
+  return strstr(numerals, "VV") != NULL;
 }
 
-static bool doesContainLL(const char* character) {
-  return strstr(character, "LL") != NULL;
+static bool doesContainLL(const char* numerals) {
+  return strstr(numerals, "LL") != NULL;
 }
 
-static bool doesContainDD(const char* character) {
-  return strstr(character, "DD") != NULL;
+static bool doesContainDD(const char* numerals) {
+  return strstr(numerals, "DD") != NULL;
 }
 
-bool isValid(const char* character) {
-	int length = strlen(character);
-	if (1 == length) {
-		return true;
-	}
+static bool containsInvalidCombinations(const char* numerals) {
+  if(containsInvalidVV(numerals)) return true;
 
-  if(doesContainVV(character)) {
-    return false;
-  }
+  if(doesContainLL(numerals)) { return true; }
 
-  if(doesContainLL(character)) {
-    return false;
-  }
+  if(doesContainDD(numerals)) { return true; }
 
-  if(doesContainDD(character)) {
-    return false;
-  }
+  if(doesContainIIII(numerals)) { return true; }
 
-	if (2 == length) {
-		return true;
-	}
+  if(doesContainXXXX(numerals)) { return true; }
 
-  if(doesContainIIII(character)) {
-    return false;
-  }
+  if(doesContainCCCC(numerals)) { return true; }
+}
 
-  if(doesContainXXXX(character)) {
-    return false;
-  }
+static bool isValid(const char* numerals) {
+	int length = strlen(numerals);
 
-  if(doesContainCCCC(character)) {
-    return false;
-  }
+    if (containsInvalidCombinations(numerals)) return false;
 
 	int count = 0;
 	int val = 0;
 	for(int i = length-1; i>= 0; i--) {
-		int current = romanToInt((char)character[i]);
+		int current = romanToInt((char)numerals[i]);
 		if (val < current) {
 			val = current;
 		} else if (current < val) {
@@ -109,27 +94,27 @@ bool isValid(const char* character) {
 	return true;
 }
 
-const int convertToArabic(const char* character) {
+const int convertToArabic(const char* numerals) {
 
 	int value = 0;
 
-	if (!isValid(character)) {
+	if (!isValid(numerals)) {
 		return 0;
 	}
 
-	if (1 == strlen(character)) {
-		return romanToInt((char)character[0]);
+	if (1 == strlen(numerals)) {
+		return romanToInt((char)numerals[0]);
 	}
 
-	for(int i = 0; i < strlen(character); ++i) {
-		int current = romanToInt((char)character[i]);
+	for(int i = 0; i < strlen(numerals); ++i) {
+		int current = romanToInt((char)numerals[i]);
 
-		if (strlen(character)-1 == i) {
+		if (strlen(numerals)-1 == i) {
 			value += current;
 			break;
 		}
 
-		int next = romanToInt((char)character[++i]);
+		int next = romanToInt((char)numerals[++i]);
 
 
 		if (current < next) {
