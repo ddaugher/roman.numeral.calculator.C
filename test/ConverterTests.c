@@ -226,6 +226,8 @@ START_TEST(test_convert_to_proper_arabic_value)
     ck_assert_int_eq(658, convertToArabic("DCLVIII"));
     ck_assert_int_eq(784, convertToArabic("DCCLXXXIV"));
     ck_assert_int_eq(786, convertToArabic("DCCLXXXVI"));
+    ck_assert_int_eq(1100, convertToArabic("MC"));
+    ck_assert_int_eq(3999, convertToArabic("MMMCMXCIX"));
    }
 END_TEST
 
