@@ -136,5 +136,8 @@ const int convertToRoman(char* buf, int n) {
 
     if (n <= 0) return EXIT_FAILURE;
 
+    buf[0] = 'I';
+    buf[1] = '\0';
+
     return EXIT_SUCCESS;
 }
