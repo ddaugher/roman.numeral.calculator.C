@@ -8,8 +8,6 @@
 
 int romanToInt(const char numeral) {
 
-    // pass invalid letter
-
     if ('M' == toupper(numeral)) {
 		return ROMAN_M_INT;
 	}
@@ -34,7 +32,11 @@ int romanToInt(const char numeral) {
 		return ROMAN_V_INT;
 	}
 
-	return ROMAN_I_INT;
+    if ('I' == toupper(numeral)) {
+        return ROMAN_I_INT;
+    }
+
+	return 0;
 
 }
 
