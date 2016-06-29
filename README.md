@@ -52,7 +52,7 @@ docker build -t ubuntu-roman .
 ```
 after the 'build' step is complete
 ```
-docker run -it -v your/path/:a/path/on/the/container ubuntu-roman /bin/bash
+docker run -it -v your/path/:/tmp ubuntu-roman /bin/bash
 ```
 ```
 cd /tmp

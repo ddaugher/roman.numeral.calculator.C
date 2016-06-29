@@ -9,31 +9,31 @@
 int romanToInt(const char numeral) {
 
     if ('M' == toupper(numeral)) {
-		return ROMAN_M_INT;
+		return ROMAN_M_1000_INT;
 	}
 
     if ('D' == toupper(numeral)) {
-		return ROMAN_D_INT;
+		return ROMAN_D_500_INT;
 	}
 
     if ('C' == toupper(numeral)) {
-		return ROMAN_C_INT;
+		return ROMAN_C_100_INT;
 	}
 
     if ('L' == toupper(numeral)) {
-		return ROMAN_L_INT;
+		return ROMAN_L_50_INT;
 	}
 
     if ('X' == toupper(numeral)) {
-		return ROMAN_X_INT;
+		return ROMAN_X_10_INT;
 	}
 
     if ('V' == toupper(numeral)) {
-		return ROMAN_V_INT;
+		return ROMAN_V_5_INT;
 	}
 
     if ('I' == toupper(numeral)) {
-        return ROMAN_I_INT;
+        return ROMAN_I_1_INT;
     }
 
 	return 0;
@@ -147,57 +147,57 @@ const int convertToRoman(char* buf, int n) {
 
     int length = 0;
 #define add(ch) if (buf) buf[length] = ch; ++length
-    while (n >= 1000) {
-        n -= 1000;
+    while (n >= ROMAN_M_1000_INT) {
+        n -= ROMAN_M_1000_INT;
         add('M');
     };
-    if (n >= 900) {
-        n -= 900;
+    if (n >= ROMAN_CM_900_INT) {
+        n -= ROMAN_CM_900_INT;
         add('C');
         add('M');
     };
-    if (n >= 500) {
-        n -= 500;
+    if (n >= ROMAN_D_500_INT) {
+        n -= ROMAN_D_500_INT;
         add('D');
     };
-    if (n >= 400) {
-        n -= 400;
+    if (n >= ROMAN_CD_400_INT) {
+        n -= ROMAN_CD_400_INT;
         add('C');
         add('D');
     };
-    if (n >= 100) {
-        n -= 100;
+    if (n >= ROMAN_C_100_INT) {
+        n -= ROMAN_C_100_INT;
         add('C');
     };
-    if (n >= 90) {
-        n -= 90;
+    if (n >= ROMAN_XC_90_INT) {
+        n -= ROMAN_XC_90_INT;
         add('X');
         add('C');
     };
-    if (n >= 50) {
-        n -= 50;
+    if (n >= ROMAN_L_50_INT) {
+        n -= ROMAN_L_50_INT;
         add('L');
     };
-    if (n >= 40) {
-        n -= 40;
+    if (n >= ROMAN_XL_40_INT) {
+        n -= ROMAN_XL_40_INT;
         add('X');
         add('L');
     };
-    while (n >= 10) {
-        n -= 10;
+    while (n >= ROMAN_X_10_INT) {
+        n -= ROMAN_X_10_INT;
         add('X');
     };
-    if (n == 9) {
-        n -= 9;
+    if (n == ROMAN_IX_9_INT) {
+        n -= ROMAN_IX_9_INT;
         add('I');
         add('X');
     };
-    if (n >= 5) {
-        n -= 5;
+    if (n >= ROMAN_V_5_INT) {
+        n -= ROMAN_V_5_INT;
         add('V');
     };
-    if (n == 4) {
-        n -= 4;
+    if (n == ROMAN_IV_4_INT) {
+        n -= ROMAN_IV_4_INT;
         add('I');
         add('V');
     };
