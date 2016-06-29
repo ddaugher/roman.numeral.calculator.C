@@ -10,3 +10,7 @@
 void add(char* result, char* val1, char* val2){
     convertToRoman(result, convertToArabic(val1) + convertToArabic(val2));
 }
+
+void delete(char* result, char* val1, char* val2){
+    convertToRoman(result, convertToArabic(val1) - convertToArabic(val2));
+}
