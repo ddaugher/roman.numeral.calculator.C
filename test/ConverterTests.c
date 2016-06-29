@@ -2,9 +2,8 @@
 #include <stdlib.h>
 #include <check.h>
 #include "ConverterTests.h"
+#include "../src/GlobalDefines.h"
 #include "../src/Converter.h"
-
-#define MAX_ROMAN_LENGTH	16
 
 START_TEST(test_convert_I_to_1)
         {

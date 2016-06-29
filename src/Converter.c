@@ -3,35 +3,36 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include "GlobalDefines.h"
 #include "Converter.h"
 
 int romanToInt(const char numberal) {
 
     if ('M' == toupper(numberal)) {
-		return 1000;
+		return ROMAN_M_INT;
 	}
 
     if ('D' == toupper(numberal)) {
-		return 500;
+		return ROMAN_D_INT;
 	}
 
     if ('C' == toupper(numberal)) {
-		return 100;
+		return ROMAN_C_INT;
 	}
 
     if ('L' == toupper(numberal)) {
-		return 50;
+		return ROMAN_L_INT;
 	}
 
     if ('X' == toupper(numberal)) {
-		return 10;
+		return ROMAN_X_INT;
 	}
 
     if ('V' == toupper(numberal)) {
-		return 5;
+		return ROMAN_V_INT;
 	}
 
-	return 1;
+	return ROMAN_I_INT;
 
 }
 
