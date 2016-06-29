@@ -137,11 +137,18 @@ const int convertToRoman(char* buf, int n) {
     int length = 0;
     if (n <= 0) return EXIT_FAILURE;
 
+    if (n == 4) {
+        n -= 4;
+        buf[length] = 'I';
+        ++length;
+        buf[length] = 'V';
+        ++length;
+    };
     while (n) {
         --n;
         buf[length] = 'I';
         ++length;
-    }
+    };
     buf[length] = '\0';
 
     return EXIT_SUCCESS;
