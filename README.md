@@ -43,8 +43,18 @@ I want to be able to subtract a number from another
 So that I can do my work faster and with fewer mathematical errors.
 
 This Kata is based on the Roman Numeral Calculator Kata at http://bit.ly/1VfHqlj
+
 ---
+### this assumes you already have 'docker engine' installed
 execute the following in order to build a proper Docker image and execute
 ```
 docker build -t ubuntu-roman .
+```
+after the 'build' step is complete
+```
+docker run -it ubuntu-roman /bin/bash
+```
+```
+cd /tmp
+make clean && make
 ```
