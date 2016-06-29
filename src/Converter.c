@@ -138,7 +138,7 @@ const int convertToRoman(char* buf, int n) {
     if (n <= 0) return EXIT_FAILURE;
 
 #define add(ch) if (buf) buf[length] = ch; ++length
-    if (n == 1000) {
+    if (n >= 1000) {
         n -= 1000;
         add('M');
     };
