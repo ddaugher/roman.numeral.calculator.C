@@ -6,29 +6,31 @@
 #include "GlobalDefines.h"
 #include "Converter.h"
 
-int romanToInt(const char numberal) {
+int romanToInt(const char numeral) {
 
-    if ('M' == toupper(numberal)) {
+    // pass invalid letter
+
+    if ('M' == toupper(numeral)) {
 		return ROMAN_M_INT;
 	}
 
-    if ('D' == toupper(numberal)) {
+    if ('D' == toupper(numeral)) {
 		return ROMAN_D_INT;
 	}
 
-    if ('C' == toupper(numberal)) {
+    if ('C' == toupper(numeral)) {
 		return ROMAN_C_INT;
 	}
 
-    if ('L' == toupper(numberal)) {
+    if ('L' == toupper(numeral)) {
 		return ROMAN_L_INT;
 	}
 
-    if ('X' == toupper(numberal)) {
+    if ('X' == toupper(numeral)) {
 		return ROMAN_X_INT;
 	}
 
-    if ('V' == toupper(numberal)) {
+    if ('V' == toupper(numeral)) {
 		return ROMAN_V_INT;
 	}
 
@@ -138,10 +140,10 @@ const int convertToArabic(const char* numerals) {
 
 const int convertToRoman(char* buf, int n) {
 
-    int length = 0;
     if (n <= 0) return EXIT_FAILURE;
     if (n >= 4000) return EXIT_FAILURE;
 
+    int length = 0;
 #define add(ch) if (buf) buf[length] = ch; ++length
     while (n >= 1000) {
         n -= 1000;

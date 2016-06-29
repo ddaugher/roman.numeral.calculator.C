@@ -13,7 +13,7 @@ START_TEST(test_add_I_and_I_equals_II)
 }
 END_TEST
 
-START_TEST(test_add_I_and_IV_equals_II)
+START_TEST(test_add_I_and_IV_equals_V)
 {
     char buf[MAX_ROMAN_LENGTH];
     add(buf, "I", "IV");
@@ -29,28 +29,28 @@ START_TEST(test_add_X_and_C_equals_CX)
 }
 END_TEST
 
-START_TEST(test_delete_X_and_I_equals_IX)
+START_TEST(test_subtract_X_and_I_equals_IX)
 {
     char buf[MAX_ROMAN_LENGTH];
-    delete(buf, "X", "I");
+    subtract(buf, "X", "I");
     ck_assert_str_eq("IX", buf);
 }
 END_TEST
 
-START_TEST(test_delete_CCCXC_and_CLXI_equals_IX)
+START_TEST(test_subtract_CCCXC_and_CLXI_equals_IX)
 {
     // 390 - 161
     char buf[MAX_ROMAN_LENGTH];
-    delete(buf, "CCCXC", "CLXI");
+    subtract(buf, "CCCXC", "CLXI");
     ck_assert_str_eq("CXCXXXIX", buf);
 }
 END_TEST
 
-START_TEST(test_delete_CLXXI_and_CLXI_equals_IX)
+START_TEST(test_subtract_CLXXI_and_CLXI_equals_IX)
 {
     // 171 - 51
     char buf[MAX_ROMAN_LENGTH];
-    delete(buf, "CCCXC", "LI");
+    subtract(buf, "CCCXC", "LI");
     ck_assert_str_eq("CXCLXLXXXXXIX", buf);
 }
 END_TEST
@@ -59,14 +59,14 @@ Suite* calculatorTestsSuite(void) {
     Suite * suite = suite_create("Calculator Tests");
     TCase *addRomanTestCase = tcase_create("add");
     tcase_add_test(addRomanTestCase, test_add_I_and_I_equals_II);
-    tcase_add_test(addRomanTestCase, test_add_I_and_IV_equals_II);
+    tcase_add_test(addRomanTestCase, test_add_I_and_IV_equals_V);
     tcase_add_test(addRomanTestCase, test_add_X_and_C_equals_CX);
-    TCase *deleteRomanTestCase = tcase_create("delete");
-    tcase_add_test(deleteRomanTestCase, test_delete_X_and_I_equals_IX);
-    tcase_add_test(deleteRomanTestCase, test_delete_CCCXC_and_CLXI_equals_IX);
-    tcase_add_test(deleteRomanTestCase, test_delete_CLXXI_and_CLXI_equals_IX);
+    TCase *subtractRomanTestCase = tcase_create("subtract");
+    tcase_add_test(subtractRomanTestCase, test_subtract_X_and_I_equals_IX);
+    tcase_add_test(subtractRomanTestCase, test_subtract_CCCXC_and_CLXI_equals_IX);
+    tcase_add_test(subtractRomanTestCase, test_subtract_CLXXI_and_CLXI_equals_IX);
     suite_add_tcase(suite, addRomanTestCase);
-    suite_add_tcase(suite, deleteRomanTestCase);
+    suite_add_tcase(suite, subtractRomanTestCase);
 
     return suite;
 }

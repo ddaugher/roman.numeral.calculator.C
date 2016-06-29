@@ -256,19 +256,21 @@ END_TEST
 START_TEST(test_convert_1_to_I) {
 
     char buf[MAX_ROMAN_LENGTH];
-    int result = convertToRoman(buf, 1);
+    convertToRoman(buf, 1);
     ck_assert_str_eq("I", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_2_to_II) {
 
-        char buf[MAX_ROMAN_LENGTH];
-        int result = convertToRoman(buf, 2);
-        ck_assert_str_eq("II", buf);
+    char buf[MAX_ROMAN_LENGTH];
+    int result = convertToRoman(buf, 2);
+    ck_assert_str_eq("II", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_3_to_III) {
@@ -278,6 +280,7 @@ START_TEST(test_convert_3_to_III) {
     ck_assert_str_eq("III", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_4_to_IV) {
@@ -287,6 +290,7 @@ START_TEST(test_convert_4_to_IV) {
     ck_assert_str_eq("IV", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_5_to_V) {
@@ -296,6 +300,7 @@ START_TEST(test_convert_5_to_V) {
     ck_assert_str_eq("V", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_6_to_VI) {
@@ -305,6 +310,7 @@ START_TEST(test_convert_6_to_VI) {
     ck_assert_str_eq("VI", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_9_to_IX) {
@@ -314,6 +320,7 @@ START_TEST(test_convert_9_to_IX) {
     ck_assert_str_eq("IX", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_10_to_X) {
@@ -323,6 +330,7 @@ START_TEST(test_convert_10_to_X) {
     ck_assert_str_eq("X", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_11_to_XI) {
@@ -332,6 +340,7 @@ START_TEST(test_convert_11_to_XI) {
     ck_assert_str_eq("XI", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_20_to_XX) {
@@ -341,6 +350,7 @@ START_TEST(test_convert_20_to_XX) {
     ck_assert_str_eq("XX", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_40_to_XL) {
@@ -350,6 +360,7 @@ START_TEST(test_convert_40_to_XL) {
     ck_assert_str_eq("XL", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_41_to_XLI) {
@@ -359,6 +370,7 @@ START_TEST(test_convert_41_to_XLI) {
     ck_assert_str_eq("XLI", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_50_to_L) {
@@ -368,6 +380,7 @@ START_TEST(test_convert_50_to_L) {
     ck_assert_str_eq("L", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_51_to_LI) {
@@ -377,6 +390,7 @@ START_TEST(test_convert_51_to_LI) {
     ck_assert_str_eq("LI", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_90_to_XC) {
@@ -386,6 +400,7 @@ START_TEST(test_convert_90_to_XC) {
     ck_assert_str_eq("XC", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_91_to_XCI) {
@@ -395,6 +410,7 @@ START_TEST(test_convert_91_to_XCI) {
     ck_assert_str_eq("XCI", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_100_to_C) {
@@ -404,6 +420,7 @@ START_TEST(test_convert_100_to_C) {
     ck_assert_str_eq("C", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_101_to_CI) {
@@ -413,6 +430,7 @@ START_TEST(test_convert_101_to_CI) {
     ck_assert_str_eq("CI", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_400_to_CD) {
@@ -422,6 +440,7 @@ START_TEST(test_convert_400_to_CD) {
     ck_assert_str_eq("CD", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_401_to_CDI) {
@@ -431,6 +450,7 @@ START_TEST(test_convert_401_to_CDI) {
     ck_assert_str_eq("CDI", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_500_to_D) {
@@ -440,6 +460,7 @@ START_TEST(test_convert_500_to_D) {
     ck_assert_str_eq("D", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_501_to_DI) {
@@ -449,6 +470,7 @@ START_TEST(test_convert_501_to_DI) {
     ck_assert_str_eq("DI", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_900_to_CM) {
@@ -458,6 +480,7 @@ START_TEST(test_convert_900_to_CM) {
     ck_assert_str_eq("CM", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_901_to_CMI) {
@@ -467,6 +490,7 @@ START_TEST(test_convert_901_to_CMI) {
     ck_assert_str_eq("CMI", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_1000_to_M) {
@@ -476,6 +500,7 @@ START_TEST(test_convert_1000_to_M) {
     ck_assert_str_eq("M", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_1001_to_MI) {
@@ -485,6 +510,7 @@ START_TEST(test_convert_1001_to_MI) {
     ck_assert_str_eq("MI", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_2000_to_MM) {
@@ -494,6 +520,7 @@ START_TEST(test_convert_2000_to_MM) {
     ck_assert_str_eq("MM", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_3000_to_MM) {
@@ -503,6 +530,7 @@ START_TEST(test_convert_3000_to_MM) {
     ck_assert_str_eq("MMM", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_3999_to_MMMCMXCIX) {
@@ -512,6 +540,7 @@ START_TEST(test_convert_3999_to_MMMCMXCIX) {
     ck_assert_str_eq("MMMCMXCIX", buf);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_4000_to_exit_failure) {
@@ -521,6 +550,7 @@ START_TEST(test_convert_4000_to_exit_failure) {
     ck_assert_int_eq(EXIT_FAILURE, result);
 
 }
+
 END_TEST
 
 START_TEST(test_convert_4001_to_exit_failure) {
@@ -530,9 +560,13 @@ START_TEST(test_convert_4001_to_exit_failure) {
     ck_assert_int_eq(EXIT_FAILURE, result);
 
 }
+
 END_TEST
 
-Suite* converterTestsSuite(void) {
+        Suite
+*
+
+converterTestsSuite(void) {
     Suite * suite = suite_create("Converter Tests");
     TCase *romanToArabicTestCase = tcase_create("Convert Roman to Arabic");
     tcase_add_test(romanToArabicTestCase, test_convert_I_to_1);
