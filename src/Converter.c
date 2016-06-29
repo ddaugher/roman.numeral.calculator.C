@@ -138,6 +138,10 @@ const int convertToRoman(char* buf, int n) {
     if (n <= 0) return EXIT_FAILURE;
 
 #define add(ch) if (buf) buf[length] = ch; ++length
+    if (n == 10) {
+        n -= 10;
+        add('X');
+    };
     if (n == 9) {
         n -= 9;
         add('I');
