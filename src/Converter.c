@@ -48,7 +48,7 @@ static bool doesContainCCCC(const char* numerals) {
   return strstr(numerals, "CCCC") != NULL;
 }
 
-static bool containsInvalidVV(const char* numerals) {
+static bool doesContainVV(const char* numerals) {
   return strstr(numerals, "VV") != NULL;
 }
 
@@ -61,7 +61,7 @@ static bool doesContainDD(const char* numerals) {
 }
 
 static bool containsInvalidCombinations(const char* numerals) {
-  if(containsInvalidVV(numerals)) return true;
+  if(doesContainVV(numerals)) return true;
 
   if(doesContainLL(numerals)) { return true; }
 
@@ -77,12 +77,15 @@ static bool containsInvalidCombinations(const char* numerals) {
 }
 
 static bool isValid(const char* numerals) {
-	int length = strlen(numerals);
 
     if (containsInvalidCombinations(numerals)) return false;
 
+    int length = strlen(numerals);
 	int count = 0;
 	int val = 0;
+
+    // loop backwards, if more than two values in sequence are
+    // smaller than previous, then roman numeral is invalid
 	for(int i = length-1; i>= 0; i--) {
 		int current = romanToInt((char)numerals[i]);
 		if (val < current) {
@@ -100,18 +103,18 @@ static bool isValid(const char* numerals) {
 
 const int convertToArabic(const char* numerals) {
 
-	int total = 0;
-
-	if (!isValid(numerals)) {
-		return 0;
-	}
-
 	int length = strlen(numerals);
 
 	if (1 == length) {
 		return romanToInt((char)numerals[0]);
 	}
 
+    if (!isValid(numerals)) {
+        return 0;
+    }
+
+
+    int total = 0;
 	for(int i = 0; i < length; ++i) {
 		int current = romanToInt((char)numerals[i]);
 
