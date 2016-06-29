@@ -524,6 +524,15 @@ START_TEST(test_convert_4000_to_exit_failure) {
 }
 END_TEST
 
+START_TEST(test_convert_4001_to_exit_failure) {
+
+    char buf[MAX_ROMAN_LENGTH];
+    int result = convertToRoman(buf, 4001);
+    ck_assert_int_eq(EXIT_FAILURE, result);
+
+}
+END_TEST
+
 Suite* converterTestsSuite(void) {
     Suite * suite = suite_create("Converter Tests");
     TCase *romanToArabicTestCase = tcase_create("Convert Roman to Arabic");
@@ -598,6 +607,7 @@ Suite* converterTestsSuite(void) {
     tcase_add_test(arabicToRomanTestCase, test_convert_3000_to_MM);
     tcase_add_test(arabicToRomanTestCase, test_convert_3999_to_MMMCMXCIX);
     tcase_add_test(arabicToRomanTestCase, test_convert_4000_to_exit_failure);
+    tcase_add_test(arabicToRomanTestCase, test_convert_4001_to_exit_failure);
     suite_add_tcase(suite, romanToArabicTestCase);
     suite_add_tcase(suite, arabicToRomanTestCase);
 
