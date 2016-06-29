@@ -488,6 +488,24 @@ START_TEST(test_convert_1001_to_MI) {
 }
 END_TEST
 
+START_TEST(test_convert_2000_to_MM) {
+
+    char buf[MAX_ROMAN_LENGTH];
+    int result = convertToRoman(buf, 2000);
+    ck_assert_str_eq("MM", buf);
+
+}
+END_TEST
+
+START_TEST(test_convert_3000_to_MM) {
+
+    char buf[MAX_ROMAN_LENGTH];
+    int result = convertToRoman(buf, 3000);
+    ck_assert_str_eq("MMM", buf);
+
+}
+END_TEST
+
 Suite* converterTestsSuite(void) {
     Suite * suite = suite_create("Converter Tests");
     TCase *romanToArabicTestCase = tcase_create("Convert Roman to Arabic");
@@ -558,6 +576,8 @@ Suite* converterTestsSuite(void) {
     tcase_add_test(arabicToRomanTestCase, test_convert_901_to_CMI);
     tcase_add_test(arabicToRomanTestCase, test_convert_1000_to_M);
     tcase_add_test(arabicToRomanTestCase, test_convert_1001_to_MI);
+    tcase_add_test(arabicToRomanTestCase, test_convert_2000_to_MM);
+    tcase_add_test(arabicToRomanTestCase, test_convert_3000_to_MM);
     suite_add_tcase(suite, romanToArabicTestCase);
     suite_add_tcase(suite, arabicToRomanTestCase);
 
