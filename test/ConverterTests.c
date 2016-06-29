@@ -389,6 +389,15 @@ START_TEST(test_convert_90_to_XC) {
 }
 END_TEST
 
+START_TEST(test_convert_91_to_XCI) {
+
+    char buf[MAX_ROMAN_LENGTH];
+    int result = convertToRoman(buf, 91);
+    ck_assert_str_eq("XCI", buf);
+
+}
+END_TEST
+
 Suite* converterTestsSuite(void) {
     Suite * suite = suite_create("Converter Tests");
     TCase *romanToArabicTestCase = tcase_create("Convert Roman to Arabic");
@@ -447,6 +456,7 @@ Suite* converterTestsSuite(void) {
     tcase_add_test(arabicToRomanTestCase, test_convert_50_to_L);
     tcase_add_test(arabicToRomanTestCase, test_convert_51_to_LI);
     tcase_add_test(arabicToRomanTestCase, test_convert_90_to_XC);
+    tcase_add_test(arabicToRomanTestCase, test_convert_91_to_XCI);
     suite_add_tcase(suite, romanToArabicTestCase);
     suite_add_tcase(suite, arabicToRomanTestCase);
 
