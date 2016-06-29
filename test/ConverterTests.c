@@ -452,6 +452,15 @@ START_TEST(test_convert_501_to_DI) {
 }
 END_TEST
 
+START_TEST(test_convert_900_to_CM) {
+
+    char buf[MAX_ROMAN_LENGTH];
+    int result = convertToRoman(buf, 900);
+    ck_assert_str_eq("CM", buf);
+
+}
+END_TEST
+
 Suite* converterTestsSuite(void) {
     Suite * suite = suite_create("Converter Tests");
     TCase *romanToArabicTestCase = tcase_create("Convert Roman to Arabic");
@@ -518,6 +527,7 @@ Suite* converterTestsSuite(void) {
     tcase_add_test(arabicToRomanTestCase, test_convert_401_to_CDI);
     tcase_add_test(arabicToRomanTestCase, test_convert_500_to_D);
     tcase_add_test(arabicToRomanTestCase, test_convert_501_to_DI);
+    tcase_add_test(arabicToRomanTestCase, test_convert_900_to_CM);
     suite_add_tcase(suite, romanToArabicTestCase);
     suite_add_tcase(suite, arabicToRomanTestCase);
 
