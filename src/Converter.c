@@ -142,8 +142,8 @@ const int convertToArabic(const char* numerals) {
 
 const int convertToRoman(char* buf, int n) {
 
-    if (n <= 0) return EXIT_FAILURE;
-    if (n >= 4000) return EXIT_FAILURE;
+    if (n < ROMAN_LOWER_LIMIT) return EXIT_FAILURE;
+    if (n > ROMAN_UPPER_LIMIT) return EXIT_FAILURE;
 
     int length = 0;
 #define add(ch) if (buf) buf[length] = ch; ++length

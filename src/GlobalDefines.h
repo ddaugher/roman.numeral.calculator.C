@@ -9,5 +9,7 @@
 #define ROMAN_X_INT	10
 #define ROMAN_V_INT	5
 #define ROMAN_I_INT	1
+#define ROMAN_UPPER_LIMIT 3999
+#define ROMAN_LOWER_LIMIT 1
 
 #endif
