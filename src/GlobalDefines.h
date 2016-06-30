@@ -1,7 +1,7 @@
 #ifndef GLOBALDEFINES_H
 #define GLOBALDEFINES_H
 
-#define MAX_ROMAN_LENGTH  15 // 14 + null terminator
+#define MAX_ROMAN_LENGTH  16 // 15 + null terminator
 #define ROMAN_M_1000_INT  1000
 #define ROMAN_CM_900_INT  900
 #define ROMAN_D_500_INT	  500
