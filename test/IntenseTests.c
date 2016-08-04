@@ -33,6 +33,14 @@ START_TEST(test_I_can_only_preceed_valid_numerals)
     ck_assert_int_eq(0, convertToArabic("IM"));
 }
 
+START_TEST(test_X_can_only_preceed_valid_numerals)
+    ck_assert_int_eq(11, convertToArabic("XI"));
+    ck_assert_int_eq(15, convertToArabic("XV"));
+    ck_assert_int_eq(20, convertToArabic("XX"));
+    ck_assert_int_eq(90, convertToArabic("XC"));
+    ck_assert_int_eq(0, convertToArabic("XD"));
+}
+
 Suite* intenseTestsSuite(void) {
     Suite * suite = suite_create("Intense Tests");
     TCase *intenseTestCase = tcase_create("intense");
@@ -41,6 +49,7 @@ Suite* intenseTestsSuite(void) {
     tcase_add_test(intenseTestCase, test_L_is_never_written_to_the_left_of_C);
     tcase_add_test(intenseTestCase, test_D_is_never_written_to_the_left_of_M);
     tcase_add_test(intenseTestCase, test_I_can_only_preceed_valid_numerals);
+    tcase_add_test(intenseTestCase, test_X_can_only_preceed_valid_numerals);
     suite_add_tcase(suite, intenseTestCase);
 
     return suite;
