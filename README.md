@@ -20,15 +20,14 @@ source and test code.
 - git
 
 ##Roman Numeral rules:
-- Roman numerals consist of the following letters: I, V, X, L, C, D, and M which mean one,
-five, ten, fifty, hundred, five hundred and one thousand respectively.
-- As we are in Rome there are no such things as decimals or integers, we need to do this
-with the strings. An example would be "XIV" + "LX" = "LXXIV."
 - Numerals can be concatenated to form a larger numeral ("XX" + "II" = "XXII").
-- If a lesser numeral is put before a bigger it means subtraction of the lesser from the
-bigger ("IV" means four, "CM" means ninehundred).
-- If the numeral is I, X or C you can't have more than three ("II" + "II" = "IV" not “IIII”).
-- If the numeral is V, L or D you can't have more than one ("D" + "D" = "M" not “DD”).
+- In the Roman numeral system, the basic "digits" are the letters I, V, X, L, C, D, and M which represent the same numbers regardless of their position.
+- Symbols are placed in order of value, starting with the largest values.
+- When the higher numeral is placed before a lower numeral, the values of each Roman numeral are added.
+- When smaller values precede larger values, the smaller values are subtracted from the larger values, and the result is added to the total.
+- Do not repeat I, X, and C more than three times in a row. (Number 4 on a Roman numeral clock is usually written as IIII. )
+- Symbols V, L, and D cannot appear more than once consecutively. ("D" + "D" = "M" not “DD”).
+- Do not subtract a number from one that is more than 10 times greater: I may only precede V and X, X may only precede L and C, and C may only precede D and M.
 
 ##Stories
 
