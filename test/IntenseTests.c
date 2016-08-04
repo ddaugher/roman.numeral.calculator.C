@@ -55,7 +55,12 @@ START_TEST(test_C_can_only_preceed_valid_numerals)
 
 START_TEST(test_invalid_examples_for_1666)
     ck_assert_int_eq(0, convertToArabic("MDCLXVXI"));
-    ck_assert_int_eq(0, convertToArabic("MDCLIXVII"));
+    ck_assert_int_eq(0, convertToArabic("IMDMICLCIXVIIII"));
+    ck_assert_int_eq(0, convertToArabic("MDMCLIXVII"));
+    ck_assert_int_eq(0, convertToArabic("MDICLCXVII"));
+    ck_assert_int_eq(0, convertToArabic("MDMCLIXVXII"));
+    ck_assert_int_eq(0, convertToArabic("MDMICLIXVXIII"));
+    ck_assert_int_eq(0, convertToArabic("IMDMICLCIXVIV"));
 }
 
 Suite* intenseTestsSuite(void) {
