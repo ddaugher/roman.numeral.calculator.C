@@ -47,9 +47,15 @@ START_TEST(test_C_can_only_preceed_valid_numerals)
     ck_assert_int_eq(101, convertToArabic("CI"));
     ck_assert_int_eq(105, convertToArabic("CV"));
     ck_assert_int_eq(110, convertToArabic("CX"));
+    ck_assert_int_eq(150, convertToArabic("CL"));
     ck_assert_int_eq(200, convertToArabic("CC"));
     ck_assert_int_eq(400, convertToArabic("CD"));
     ck_assert_int_eq(900, convertToArabic("CM"));
+}
+
+START_TEST(test_invalid_examples_for_1666)
+    ck_assert_int_eq(0, convertToArabic("MDCLXVXI"));
+    ck_assert_int_eq(0, convertToArabic("MDCLIXVII"));
 }
 
 Suite* intenseTestsSuite(void) {
@@ -61,6 +67,7 @@ Suite* intenseTestsSuite(void) {
     tcase_add_test(intenseTestCase, test_D_is_never_written_to_the_left_of_M);
     tcase_add_test(intenseTestCase, test_I_can_only_preceed_valid_numerals);
     tcase_add_test(intenseTestCase, test_C_can_only_preceed_valid_numerals);
+    tcase_add_test(intenseTestCase, test_invalid_examples_for_1666);
     suite_add_tcase(suite, intenseTestCase);
 
     return suite;
