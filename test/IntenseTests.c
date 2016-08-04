@@ -28,6 +28,7 @@ START_TEST(test_I_can_only_preceed_valid_numerals)
     ck_assert_int_eq(4, convertToArabic("IV"));
     ck_assert_int_eq(9, convertToArabic("IX"));
     ck_assert_int_eq(0, convertToArabic("IL"));
+    ck_assert_int_eq(0, convertToArabic("IC"));
 }
 
 Suite* intenseTestsSuite(void) {

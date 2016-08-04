@@ -77,7 +77,7 @@ static bool doesHaveDLeftOfM(const char* numerals) {
 }
 
 static bool doesIPreceedInvalidRomanNumeral(const char* numerals) {
-  return strstr(numerals, "IL") != NULL;
+  return strstr(numerals, "IL") != NULL || strstr(numerals, "IC") != NULL;
 }
 
 static bool containsInvalidCombinations(const char* numerals) {
