@@ -64,6 +64,26 @@ static bool doesContainDD(const char* numerals) {
   return strstr(numerals, "DD") != NULL;
 }
 
+static bool doesHaveVLeftOfX(const char* numerals) {
+  return strstr(numerals, "VX") != NULL;
+}
+
+static bool doesHaveLLeftOfC(const char* numerals) {
+  return strstr(numerals, "LC") != NULL;
+}
+
+static bool doesHaveDLeftOfM(const char* numerals) {
+  return strstr(numerals, "DM") != NULL;
+}
+
+static bool doesIPreceedInvalidRomanNumeral(const char* numerals) {
+  return strstr(numerals, "IL") != NULL || strstr(numerals, "IC") != NULL || strstr(numerals, "ID") != NULL || strstr(numerals, "IM") != NULL;
+}
+
+static bool doesXPreceedInvalidRomanNumeral(const char* numerals) {
+  return strstr(numerals, "XD") != NULL || strstr(numerals, "XM") != NULL;
+}
+
 static bool containsInvalidCombinations(const char* numerals) {
   if(doesContainVV(numerals)) return true;
 
@@ -76,6 +96,14 @@ static bool containsInvalidCombinations(const char* numerals) {
   if(doesContainXXXX(numerals)) { return true; }
 
   if(doesContainCCCC(numerals)) { return true; }
+
+  if(doesHaveVLeftOfX(numerals)) { return true; }
+
+  if(doesHaveLLeftOfC(numerals)) { return true; }
+
+  if(doesHaveDLeftOfM(numerals)) { return true; }
+  if(doesIPreceedInvalidRomanNumeral(numerals)) { return true; }
+  if(doesXPreceedInvalidRomanNumeral(numerals)) { return true; }
 
   return false;
 }
