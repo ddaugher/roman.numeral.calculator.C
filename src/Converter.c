@@ -64,6 +64,10 @@ static bool doesContainDD(const char* numerals) {
   return strstr(numerals, "DD") != NULL;
 }
 
+static bool doesHaveVLeftOfX(const char* numerals) {
+  return strstr(numerals, "VX") != NULL;
+}
+
 static bool containsInvalidCombinations(const char* numerals) {
   if(doesContainVV(numerals)) return true;
 
@@ -77,7 +81,7 @@ static bool containsInvalidCombinations(const char* numerals) {
 
   if(doesContainCCCC(numerals)) { return true; }
 
-  if (strstr(numerals, "VX") != NULL) { return true; }
+  if(doesHaveVLeftOfX(numerals)) { return true; }
 
   return false;
 }
