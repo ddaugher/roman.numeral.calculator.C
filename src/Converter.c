@@ -102,7 +102,9 @@ static bool containsInvalidCombinations(const char* numerals) {
   if(doesHaveLLeftOfC(numerals)) { return true; }
 
   if(doesHaveDLeftOfM(numerals)) { return true; }
+
   if(doesIPreceedInvalidRomanNumeral(numerals)) { return true; }
+  
   if(doesXPreceedInvalidRomanNumeral(numerals)) { return true; }
 
   return false;
