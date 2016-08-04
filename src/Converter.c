@@ -81,7 +81,7 @@ static bool doesIPreceedInvalidRomanNumeral(const char* numerals) {
 }
 
 static bool doesXPreceedInvalidRomanNumeral(const char* numerals) {
-  return strstr(numerals, "XD") != NULL;
+  return strstr(numerals, "XD") != NULL || strstr(numerals, "XM") != NULL;
 }
 
 static bool containsInvalidCombinations(const char* numerals) {

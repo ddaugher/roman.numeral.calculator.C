@@ -39,6 +39,8 @@ START_TEST(test_X_can_only_preceed_valid_numerals)
     ck_assert_int_eq(20, convertToArabic("XX"));
     ck_assert_int_eq(90, convertToArabic("XC"));
     ck_assert_int_eq(0, convertToArabic("XD"));
+    ck_assert_int_eq(0, convertToArabic("XD"));
+    ck_assert_int_eq(0, convertToArabic("XM"));
 }
 
 Suite* intenseTestsSuite(void) {
