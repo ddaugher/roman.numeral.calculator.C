@@ -77,6 +77,8 @@ static bool containsInvalidCombinations(const char* numerals) {
 
   if(doesContainCCCC(numerals)) { return true; }
 
+  if (strstr(numerals, "VX") != NULL) { return true; }
+
   return false;
 }
 
