@@ -72,6 +72,10 @@ static bool doesHaveLLeftOfC(const char* numerals) {
   return strstr(numerals, "LC") != NULL;
 }
 
+static bool doesHaveDLeftOfM(const char* numerals) {
+  return strstr(numerals, "DM") != NULL;
+}
+
 static bool containsInvalidCombinations(const char* numerals) {
   if(doesContainVV(numerals)) return true;
 
@@ -88,6 +92,8 @@ static bool containsInvalidCombinations(const char* numerals) {
   if(doesHaveVLeftOfX(numerals)) { return true; }
 
   if(doesHaveLLeftOfC(numerals)) { return true; }
+
+  if(doesHaveDLeftOfM(numerals)) { return true; }
 
   return false;
 }
