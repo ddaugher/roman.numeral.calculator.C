@@ -6,10 +6,10 @@
 #include "GlobalDefines.h"
 #include "Converter.h"
 
-void add(char* result, char* val1, char* val2){
+void add(char* result, const char* val1, const char* val2){
     convertToRoman(result, convertToArabic(val1) + convertToArabic(val2));
 }
 
-void subtract(char* result, char* val1, char* val2){
+void subtract(char* result, const char* val1, const char* val2){
     convertToRoman(result, convertToArabic(val1) - convertToArabic(val2));
 }
