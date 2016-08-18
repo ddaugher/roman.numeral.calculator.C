@@ -79,6 +79,14 @@ START_TEST(test_when_subtracting_and_first_value_is_null_should_return_error)
 }
 END_TEST
 
+START_TEST(test_when_subtracting_and_second_value_is_null_should_return_error)
+{
+    char buf[MAX_ROMAN_LENGTH];
+    subtract(buf, "I", NULL);
+    ck_assert_str_eq("ERROR_VAL_NULL", buf);
+}
+END_TEST
+
 Suite* calculatorTestsSuite(void) {
     Suite * suite = suite_create("Calculator Tests");
     TCase *addRomanTestCase = tcase_create("add");
@@ -92,6 +100,7 @@ Suite* calculatorTestsSuite(void) {
     tcase_add_test(subtractRomanTestCase, test_subtract_CCCXC_and_CLXI_equals_IX);
     tcase_add_test(subtractRomanTestCase, test_subtract_CLXXI_and_CLXI_equals_IX);
     tcase_add_test(addRomanTestCase, test_when_subtracting_and_first_value_is_null_should_return_error);
+    tcase_add_test(addRomanTestCase, test_when_subtracting_and_second_value_is_null_should_return_error);
     suite_add_tcase(suite, addRomanTestCase);
     suite_add_tcase(suite, subtractRomanTestCase);
 
